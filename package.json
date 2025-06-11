@@ -1,7 +1,7 @@
 {
   "name": "fasterz",
   "private": true,
-    "homepage": "https://saxopa.github.io/fasterz",
+  "homepage": "https://saxopa.github.io/fasterz",
 
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build && npm run deploy"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build "
   },
   "dependencies": {
     "react": "^19.1.0",
