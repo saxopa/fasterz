@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from '../../supabaseClient';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const Register = () => {
     password: '',
     confirmPassword: ''
   });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -17,10 +20,27 @@ const Register = () => {
     });
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    // Logique d'inscription
-    navigate('/login');
+    setError('');
+    if (formData.password !== formData.confirmPassword) {
+      setError('Les mots de passe ne correspondent pas.');
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
+      options: {
+        data: { name: formData.name }
+      }
+    });
+    setLoading(false);
+    if (error) {
+      setError(error.message);
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
@@ -73,8 +93,9 @@ const Register = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn-primary">
-              S'inscrire
+            {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
+            <button type="submit" className="btn-primary" disabled={loading}>
+              {loading ? 'Inscription...' : "S'inscrire"}
             </button>
           </form>
           <p>

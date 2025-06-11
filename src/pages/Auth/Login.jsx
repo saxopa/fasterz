@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from '../../supabaseClient';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Logique de connexion
-    navigate('/');
+    setError('');
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+    setLoading(false);
+    if (error) {
+      setError(error.message);
+    } else {
+      navigate('/');
+    }
   };
 
   return (
@@ -38,8 +51,9 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn-primary">
-              Se connecter
+            {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
+            <button type="submit" className="btn-primary" disabled={loading}>
+              {loading ? 'Connexion...' : 'Se connecter'}
             </button>
           </form>
           <p>
