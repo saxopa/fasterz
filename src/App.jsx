@@ -17,7 +17,7 @@ function App() {
         <Header />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/fasterz/login" element={<Login />} />
             <Route path="/fasterz/register" element={<Register />} />
             <Route path="/fasterz/reservation" element={<Reservation />} />
