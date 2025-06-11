@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className="page home-page">
       <div className="container">
-        <h2>Commandez vos courses en quelques clics</h2>
+        <h2>tester vos courses en quelques clics</h2>
         <form onSubmit={handleOrder} className="order-form">
           <div className="form-group">
             <label htmlFor="address">Adresse de livraison</label>
