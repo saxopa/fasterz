@@ -231,3 +231,42 @@ Intégrez Stripe pour les paiements.
 Ajoutez les notifications en temps réel.
 
 Préparez un back-office minimal pour la gestion admin.
+
+
+
+# A faire (pour Windows) : 
+
+## Prérequis
+
+* **Node.js** v18+ (testé en v22.15.0)
+* **npm** v8+ (inclus, v10.9.2)
+* **PowerShell** (fourni sous Windows)
+
+## Installation sous Windows (PowerShell)
+
+1. Ouvrez **PowerShell** et placez-vous dans le dossier de travail fasterz puis installez les dépendances :
+
+   ```powershell
+   cd fasterz
+   npm install
+   npm install react-router-dom
+   ```
+
+## Lancer en développement
+
+Dans le même terminal PowerShell, lancez :
+
+```powershell
+npm run dev
+```
+
+Ouvrez ensuite votre navigateur sur exemple : `http://localhost:5173`.
+Le http est donné après un npm run dev 
+## Compiler pour la production
+
+```powershell
+npm run build
+
+# Prévisualiser la version de production
+npm run preview
+```
