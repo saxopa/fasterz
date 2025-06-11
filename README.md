@@ -267,6 +267,7 @@ Le http est donné après un npm run dev
 ```powershell
 npm run build
 
-# Prévisualiser la version de production
-npm run preview
+Nous avons publié depuis github pour avoir un rendu pour tous.
+Pour déployer : 
+npm run deploy
 ```
