@@ -29,8 +29,7 @@ bash
 npm run dev
 Votre application sera accessible à l'adresse http://localhost:5173.
 
-Structure du Projet
-Organisez votre projet avec cette structure claire :
+Structure du Projet : 
 
 text
 fasterz/
@@ -48,8 +47,15 @@ fasterz/
 │   │   ├── Auth/
 │   │   │   ├── Login.jsx
 │   │   │   └── Register.jsx
-│   │   ├── Home.jsx
-│   │   ├── Reservation.jsx
+│   │   ├── Reservation/
+│   │   │   ├── index.jsx            
+│   │   │   ├── Form.jsx             
+│   │   │   ├── Confirm.jsx          
+│   │   │   ├── Track.jsx            
+│   │   │   ├── Start.jsx            
+│   │   │   ├── Ongoing.jsx          
+│   │   │   └── End.jsx
+│   │   ├── Home.jsx              
 │   │   ├── Account.jsx
 │   │   ├── History.jsx
 │   │   └── Contact.jsx

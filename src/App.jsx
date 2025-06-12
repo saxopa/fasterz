@@ -30,23 +30,6 @@ function App() {
   // Vous pouvez passer l'état user en prop si besoin
   return (
     <Router>
-<<<<<<< HEAD
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/"                   element={<Home />} />
-          <Route path="/login"              element={<Login />} />
-          <Route path="/register"           element={<Register />} />
-
-          <Route path="/reservation/*"      element={<Reservation />} />
-
-          <Route path="/account"            element={<Account />} />
-          <Route path="/history"            element={<History />} />
-          <Route path="/contact"            element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-=======
       <div className="app">
         <Header user={user} />
         <main className="main-content">
@@ -54,7 +37,7 @@ function App() {
             <Route path="/home" element={<Home user={user} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/reservation" element={<Reservation user={user} />} />
+            <Route path="/reservation/*" element={<Reservation user={user} />} />
             <Route path="/account" element={<Account user={user} />} />
             <Route path="/history" element={<History user={user} />} />
             <Route path="/contact" element={<Contact user={user} />} />
@@ -62,7 +45,6 @@ function App() {
         </main>
         <Footer />
       </div>
->>>>>>> 1094dd5b5eeb2d8f556fe8be5085a5cb53530647
     </Router>
   )
 }
