@@ -62,7 +62,8 @@ fasterz/
 │   ├── styles/
 │   │   ├── App.css
 │   │   ├── Button.css
-│   │   └── global.css
+│   │   ├── reservation.css
+│   │   └── index.css
 │   ├── App.jsx
 │   └── main.jsx
 ├── index.html
@@ -230,7 +231,6 @@ Préparez un back-office minimal pour la gestion admin.
 * **Node.js** v18+ (testé en v22.15.0)
 * **npm** v8+ (inclus, v10.9.2)
 * **PowerShell** (fourni sous Windows)
-npm install @supabase/supabase-js
 
 ## Installation sous Windows (PowerShell)
 
@@ -240,6 +240,8 @@ npm install @supabase/supabase-js
    cd fasterz
    npm install
    npm install react-router-dom
+   npm install @supabase/supabase-js
+   npm install jspdf
    ```
 
 ## Lancer en développement

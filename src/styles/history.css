@@ -1,0 +1,79 @@
+/* History.css */
+.history-container {
+  max-width: 600px;
+  margin: 2rem auto;        /* centré horizontalement */
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1d1d1f;
+}
+
+.history-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filter-label {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.filter-select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d1d1d6;
+  border-radius: 8px;
+  background-color: #f2f2f7;
+  cursor: pointer;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* espace vertical entre les lignes */
+}
+
+.history-header-row {
+  display: none; /* lignes cachées pour un look épuré, on utilisera plutôt des cartes si besoin */
+}
+
+.history-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem;
+  align-items: center;
+}
+
+.history-cell {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #2c2c2e;
+}
+
+.btn-download {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #0071e3;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-download:hover {
+  background-color: #005bb5;
+}

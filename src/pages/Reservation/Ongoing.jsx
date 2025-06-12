@@ -78,6 +78,7 @@ export default function Ongoing() {
 
   // 5) Requête OSRM au fur et à mesure
   useEffect(() => {
+    // origine = position live si dispo, sinon point de départ
     const origin = geoAllowed === true && currentPos
       ? currentPos
       : pickupCoords
@@ -130,6 +131,15 @@ export default function Ongoing() {
     )
   }
 
+  // Si ni géocodage ni position dispo, on attend
+  if (!pickupCoords) {
+    return (
+      <div style={{ padding: '1rem' }}>
+        <p>Chargement des coordonnées de départ…</p>
+      </div>
+    )
+  }
+
   return (
     <div style={{ padding: '1rem' }}>
       <h2>Suivi de votre course</h2>
@@ -160,7 +170,8 @@ export default function Ongoing() {
       {/* Carte */}
       <div style={{ height: '400px', width: '100%' }}>
         <MapContainer
-          center={currentPos || pickupCoords || [48.8566,2.3522]}
+          // on centre d’abord sur currentPos si dispo, sinon sur pickupCoords
+          center={currentPos || pickupCoords}
           zoom={13}
           style={{ height: '100%', width: '100%' }}
         >
