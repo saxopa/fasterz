@@ -31,7 +31,7 @@ Votre application sera accessible à l'adresse http://localhost:5173.
 
 Structure du Projet : 
 
-text
+
 fasterz/
 ├── public/
 ├── src/
@@ -60,6 +60,8 @@ fasterz/
 │   │   ├── History.jsx
 │   │   └── Contact.jsx
 │   ├── styles/
+│   │   ├── App.css
+│   │   ├── Button.css
 │   │   └── global.css
 │   ├── App.jsx
 │   └── main.jsx
@@ -112,10 +114,9 @@ Système d’avis et de notation.
 
 Support client.
 
-2. Étendre la structure du projet
+2. Étendre la structure du projet Driver 
 Ajoutez les dossiers/pages pour les nouveaux rôles et fonctionnalités :
 
-text
 src/
   ├── pages/
   │   ├── Passenger/
@@ -141,28 +142,10 @@ Installez une librairie de carte pour React :
 
 bash
 npm install react-leaflet leaflet
-ou
 
-bash
-npm install @react-google-maps/api
-Ajoutez un composant RideMap.jsx qui affiche la position du passager et des chauffeurs en temps réel. Exemple avec React Leaflet :
-
-jsx
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
-
-const RideMap = ({ userPosition, drivers }) => (
-  <MapContainer center={userPosition} zoom={13} style={{ height: "400px", width: "100%" }}>
-    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-    <Marker position={userPosition} />
-    {drivers.map(driver => (
-      <Marker key={driver.id} position={driver.position} />
-    ))}
-  </MapContainer>
-);
+Ajoutez un composant RideMap.jsx qui affiche la position du passager et des chauffeurs en temps réel.
 Pour obtenir la position de l’utilisateur :
 
-js
-navigator.geolocation.getCurrentPosition(successCallback);
 4. Gestion des courses et matching
 a. Création d’un formulaire de demande de course (passager)
 Page : RequestRide.jsx
@@ -247,6 +230,7 @@ Préparez un back-office minimal pour la gestion admin.
 * **Node.js** v18+ (testé en v22.15.0)
 * **npm** v8+ (inclus, v10.9.2)
 * **PowerShell** (fourni sous Windows)
+npm install @supabase/supabase-js
 
 ## Installation sous Windows (PowerShell)
 

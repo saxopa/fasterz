@@ -179,3 +179,10 @@ body {
     justify-content: center;
   }
 }
+
+/* styles/global.css */
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+}
+

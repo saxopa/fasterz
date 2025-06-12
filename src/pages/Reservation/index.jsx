@@ -11,13 +11,21 @@ import End      from './End'
 export default function Reservation() {
   return (
     <Routes>
+      {/* formulaire de saisie */}
       <Route index      element={<Form />} />
+      {/* confirmation */}
       <Route path="confirm" element={<Confirm />} />
+      {/* suivi de la course */}
       <Route path="track"   element={<Track />} />
+      {/* début */}
       <Route path="start"   element={<Start />} />
+      {/* en cours */}
       <Route path="ongoing" element={<Ongoing />} />
+      {/* fin */}
       <Route path="end"     element={<End />} />
-      <Route path="*"       element={<Navigate to="" replace />} />
+
+      {/* toute autre route redirige vers /reservation */}
+      <Route path="*" element={<Navigate to="/reservation" replace />} />
     </Routes>
   )
 }
