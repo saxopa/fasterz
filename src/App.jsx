@@ -13,23 +13,23 @@ import './styles/index.css';
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/fasterz/login" element={<Login />} />
-            <Route path="/fasterz/register" element={<Register />} />
-            <Route path="/fasterz/reservation" element={<Reservation />} />
-            <Route path="/fasterz/account" element={<Account />} />
-            <Route path="/fasterz/history" element={<History />} />
-            <Route path="/fasterz/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/"                   element={<Home />} />
+          <Route path="/login"              element={<Login />} />
+          <Route path="/register"           element={<Register />} />
+
+          <Route path="/reservation/*"      element={<Reservation />} />
+
+          <Route path="/account"            element={<Account />} />
+          <Route path="/history"            element={<History />} />
+          <Route path="/contact"            element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
