@@ -1,7 +1,7 @@
 {
   "name": "fasterz",
   "private": true,
-  "homepage": "https://saxopa.github.io/fasterz",
+  "homepage": "https://saxopa.github.io/fasterz/home",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist "
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
